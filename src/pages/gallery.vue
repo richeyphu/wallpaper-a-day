@@ -6,6 +6,7 @@ useHead({
 });
 
 const posts = ref<Post[] | null>(null);
+const loading = ref(true);
 
 onMounted(async () => {
   try {
@@ -15,6 +16,7 @@ onMounted(async () => {
     }
     const data = await response.json();
     posts.value = data.posts;
+    loading.value = false;
   } catch (error) {
     console.error("Error fetching latest post:", error);
   }
@@ -33,6 +35,14 @@ const scrollToTop = () => {
       >
         Gallery
       </h2>
+      <div
+        v-if="loading"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 mt-4"
+      >
+        <div v-for="n in 60" :key="n">
+          <div class="aspect-video skeleton"></div>
+        </div>
+      </div>
       <div
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 mt-4"
       >
