@@ -1,6 +1,8 @@
 {
   "name": "wallpaper-a-day",
+  "version": "0.1.0",
   "private": true,
+  "repository": "github:richeyphu/wallpaper-a-day",
   "type": "module",
   "scripts": {
     "build": "nuxt build",
