@@ -7,6 +7,9 @@ useHead({
       content: "Favorite daily anime wallpaper site reimagined.",
     },
   ],
+  htmlAttrs: {
+    lang: "en",
+  },
 });
 </script>
 
