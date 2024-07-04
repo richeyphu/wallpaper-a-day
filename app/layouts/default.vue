@@ -1,0 +1,24 @@
+<script setup lang="ts">
+useHead({
+  title: "Wallpaper A Day",
+  meta: [
+    {
+      name: "description",
+      content: "Favorite daily anime wallpaper site reimagined.",
+    },
+  ],
+});
+</script>
+
+<template>
+  <div id="app">
+    <Navbar />
+    <slot />
+  </div>
+</template>
+
+<style scoped>
+#app {
+  font-family: "Noto Sans Thai", sans-serif;
+}
+</style>
