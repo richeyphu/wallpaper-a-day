@@ -1,13 +1,11 @@
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import { CMS_URL } from "~/utils";
 
 const latestPost = ref<Post | null>(null);
 
 onMounted(async () => {
   try {
-    const response = await fetch(
-      "https://public-api.wordpress.com/rest/v1.1/sites/wallpaper-a-day.com/posts?number=1"
-    );
+    const response = await fetch(`${CMS_URL}/posts?number=1`);
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }

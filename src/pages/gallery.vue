@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { CMS_URL } from "~/utils";
+
 useHead({
   title: "wallpaper a day / gallery",
 });
@@ -7,9 +9,7 @@ const posts = ref<Post[] | null>(null);
 
 onMounted(async () => {
   try {
-    const response = await fetch(
-      "https://public-api.wordpress.com/rest/v1.1/sites/wallpaper-a-day.com/posts?number=60"
-    );
+    const response = await fetch(`${CMS_URL}/posts?number=60`);
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
