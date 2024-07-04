@@ -3,6 +3,9 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   compatibilityDate: "2024-07-04",
   srcDir: "./src",
+  dir: {
+    public: "../public",
+  },
   modules: ["@nuxtjs/tailwindcss", "@nuxtjs/google-fonts"],
   tailwindcss: {
     editorSupport: true,
