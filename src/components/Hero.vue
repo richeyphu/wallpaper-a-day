@@ -1,12 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
 
-interface Post {
-  title: string;
-  content: HTMLBodyElement;
-  URL: string;
-}
-
 const latestPost = ref<Post | null>(null);
 
 onMounted(async () => {
