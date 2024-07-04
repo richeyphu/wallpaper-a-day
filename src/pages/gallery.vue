@@ -31,7 +31,7 @@ const scrollToTop = () => {
   <div class="bg-base-200 min-h-screen py-20">
     <div class="container px-4 mx-auto">
       <h2
-        class="text-center my-16 py-1 drop-shadow-sm font-bold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"
+        class="text-center my-16 py-1 drop-shadow-sm font-bold text-transparent text-3xl md:text-4xl lg:text-5xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"
       >
         Gallery
       </h2>
