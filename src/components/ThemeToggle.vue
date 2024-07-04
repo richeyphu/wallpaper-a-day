@@ -5,8 +5,24 @@ const colorTheme = ref<string | null>();
 
 onMounted(() => {
   themeChange(false);
-  colorTheme.value = localStorage.getItem("theme") || "light";
+
+  const savedTheme = localStorage.getItem("theme");
+  
+  if (savedTheme) {
+    colorTheme.value = savedTheme;
+  } else {
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+    colorTheme.value = prefersDark ? "dark" : "light";
+    localStorage.setItem("theme", colorTheme.value);
+  }
 });
+
+const toggleTheme = () => {
+  colorTheme.value = colorTheme.value === "dark" ? "light" : "dark";
+  localStorage.setItem("theme", colorTheme.value);
+};
 </script>
 
 <template>
@@ -14,7 +30,7 @@ onMounted(() => {
     data-toggle-theme="dark,light"
     data-act-class="ACTIVECLASS"
     class="btn btn-ghost p-3"
-    @click="colorTheme = colorTheme === 'dark' ? 'light' : 'dark'"
+    @click="toggleTheme"
   >
     <Icon
       v-if="colorTheme === 'light'"
