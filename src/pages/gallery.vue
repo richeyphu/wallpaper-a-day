@@ -23,6 +23,10 @@ onMounted(async () => {
     console.error("Error fetching latest post:", error);
   }
 });
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 </script>
 
 <template>
@@ -41,7 +45,12 @@ onMounted(async () => {
           :key="post.title"
           class="card shadow-lg hover:scale-105 transition-transform"
         >
-          <NuxtLink :to="post.URL" class="" target="_blank">
+          <NuxtLink
+            :to="post.URL"
+            class=""
+            target="_blank"
+            aria-label="View wallpaper"
+          >
             <img
               :src="
                 post.attachments[Object.keys(post.attachments)[0]].thumbnails
@@ -54,7 +63,9 @@ onMounted(async () => {
         </div>
       </div>
       <div class="text-center mt-10">
-        <NuxtLink class="btn btn-outline btn-primary" to="/"> Home </NuxtLink>
+        <button class="btn btn-ghost" @click="scrollToTop" aria-label="Go to top">
+          <Icon name="fe:arrow-up" class="text-lg" />
+        </button>
       </div>
     </div>
   </div>
