@@ -33,7 +33,11 @@
           <li><a>Item 3</a></li>
         </ul>
       </div> -->
-      <NuxtLink class="btn btn-ghost text-xl drop-shadow-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600" to="/">Wallpaper A Day</NuxtLink>
+      <NuxtLink
+        class="btn btn-ghost text-xl drop-shadow-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"
+        to="/"
+        >Wallpaper A Day</NuxtLink
+      >
     </div>
     <!-- <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1">
