@@ -33,7 +33,7 @@
           <li><a>Item 3</a></li>
         </ul>
       </div> -->
-      <a class="btn btn-ghost text-xl">Wallpaper A Day</a>
+      <NuxtLink class="btn btn-ghost text-xl drop-shadow-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600" to="/">Wallpaper A Day</NuxtLink>
     </div>
     <!-- <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1">
@@ -51,11 +51,11 @@
       </ul>
     </div> -->
     <div class="navbar-end">
-      <a
+      <NuxtLink
         class="btn btn-outline"
-        href="https://wallpaper-a-day.com/"
+        to="https://wallpaper-a-day.com/"
         target="_blank"
-        >Visit original site</a
+        >Visit original site</NuxtLink
       >
     </div>
   </nav>
