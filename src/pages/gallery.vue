@@ -14,10 +14,6 @@ onMounted(async () => {
       throw new Error("Network response was not ok");
     }
     const data = await response.json();
-    console.log(data.posts);
-    console.log(
-      data.posts[0].attachments[Object.keys(data.posts[0].attachments)[0]]
-    );
     posts.value = data.posts;
   } catch (error) {
     console.error("Error fetching latest post:", error);
@@ -51,13 +47,18 @@ const scrollToTop = () => {
             target="_blank"
             aria-label="View wallpaper"
           >
-            <img
+            <NuxtImg
               :src="
                 post.attachments[Object.keys(post.attachments)[0]].thumbnails
                   .large
               "
               :alt="post.title"
               class="card-image rounded-xl w-full"
+              :placeholder="
+                post.attachments[Object.keys(post.attachments)[0]].thumbnails
+                  .thumbnail
+              "
+              placeholder-class="skeleton blur-[2px]"
             />
           </NuxtLink>
         </div>
