@@ -20,10 +20,16 @@ importers:
       nuxt:
         specifier: ^3.12.3
         version: 3.12.3(@opentelemetry/api@1.9.0)(@parcel/watcher@2.4.1)(@types/node@20.14.9)(ioredis@5.4.1)(magicast@0.3.4)(rollup@4.18.0)(terser@5.31.1)(vite@5.3.3(@types/node@20.14.9)(terser@5.31.1))
+      theme-change:
+        specifier: ^2.5.0
+        version: 2.5.0
       vue:
         specifier: latest
         version: 3.4.31
     devDependencies:
+      '@iconify-json/fe':
+        specifier: ^1.1.10
+        version: 1.1.10
       daisyui:
         specifier: ^4.12.10
         version: 4.12.10(postcss@8.4.39)
@@ -663,6 +669,9 @@ packages:
     resolution: {integrity: sha512-AiXO/bfe9bmxBjxxtYxFAXGZvMaN5s8kO+jBHAJCON8rJoB5YS/D6X7ZNc6XQkuHNmyl4CYaMI1fJ/Gn27RGGw==}
     engines: {node: '>=6'}
     hasBin: true
+
+  '@iconify-json/fe@1.1.10':
+    resolution: {integrity: sha512-ePFSmtnDTk+PtsmGsPtmLXPQNV/V3iC/Kr7E/yv0PANiwVwqY5JJcaAVyWlVIvB7qaLEhncVhvXp7TwcM9bPpw==}
 
   '@iconify/collections@1.0.437':
     resolution: {integrity: sha512-eGY1y8dP94zAh0a8hslIsQ6GofWzNwXKXXMW5F+rEr+EL+yO0RrDxYJOKTnYYvqzNsCBbmNr9kgX17OGQWeaEA==}
@@ -3399,6 +3408,9 @@ packages:
   text-decoder@1.1.0:
     resolution: {integrity: sha512-TmLJNj6UgX8xcUZo4UDStGQtDiTzF7BzWlzn9g7UWrjkpHr5uJTK1ld16wZ3LXb2vb6jH8qU89dW5whuMdXYdw==}
 
+  theme-change@2.5.0:
+    resolution: {integrity: sha512-B/UdsgdHAGhSKHTAQnxg/etN0RaMDpehuJmZIjLMDVJ6DGIliRHGD6pODi1CXLQAN9GV0GSyB3G6yCuK05PkPQ==}
+
   thenify-all@1.6.0:
     resolution: {integrity: sha512-RNxQH/qI8/t3thXJDwcstUO4zeqo64+Uy/+sNVRBx4Xn2OX+OZ9oP+iJnNFqplFra2ZUVeKCSa2oVWi3T4uVmA==}
     engines: {node: '>=0.8'}
@@ -4265,6 +4277,10 @@ snapshots:
       long: 5.2.3
       protobufjs: 7.3.2
       yargs: 17.7.2
+
+  '@iconify-json/fe@1.1.10':
+    dependencies:
+      '@iconify/types': 2.0.0
 
   '@iconify/collections@1.0.437':
     dependencies:
@@ -7535,6 +7551,8 @@ snapshots:
   text-decoder@1.1.0:
     dependencies:
       b4a: 1.6.6
+
+  theme-change@2.5.0: {}
 
   thenify-all@1.6.0:
     dependencies:
