@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   dir: {
     public: "../public",
   },
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/google-fonts"],
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/google-fonts", "@nuxt/icon"],
   tailwindcss: {
     editorSupport: true,
     configPath: "./tailwind.config.ts",
