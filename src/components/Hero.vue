@@ -31,7 +31,7 @@ onMounted(async () => {
           v-html="latestPost.content"
           v-if="latestPost"
         ></div>
-        <NuxtLink class="mt-1 btn btn-outline btn-primary" to="/gallery">
+        <NuxtLink class="mt-1 btn btn-outline btn-secondary" to="/gallery">
           Explore gallery
         </NuxtLink>
       </div>
