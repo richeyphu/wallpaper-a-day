@@ -14,8 +14,10 @@ onMounted(() => {
     const prefersDark = window.matchMedia(
       "(prefers-color-scheme: dark)"
     ).matches;
-    colorTheme.value = prefersDark ? "dark" : "light";
-    localStorage.setItem("theme", colorTheme.value);
+    const prefersTheme = prefersDark ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", prefersTheme);
+    colorTheme.value = prefersTheme;
+    localStorage.setItem("theme", prefersTheme);
   }
 });
 
