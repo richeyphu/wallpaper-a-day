@@ -7,10 +7,14 @@
         >wallpaper a day</NuxtLink
       >
     </div>
+
     <div class="navbar-center flex"></div>
+
     <div class="navbar-end">
+      <ThemeToggle />
+
       <div class="dropdown dropdown-end">
-        <div tabindex="0" role="button" class="btn btn-ghost">
+        <div tabindex="0" role="button" class="btn btn-ghost p-3">
           <Icon name="fe:bar" class="text-2xl" />
         </div>
         <ul

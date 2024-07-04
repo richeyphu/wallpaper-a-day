@@ -27,7 +27,7 @@ onMounted(async () => {
           Wallpaper of the Day
         </h1>
         <div
-          class="mt-8 mb-4 [&_img]:rounded-xl [&_img]:shadow-xl [&_img]:mb-4 [&_p]:text-sm [&_p]:font-light [&_a]:link-secondary [&_a]:link-hover"
+          class="mt-8 mb-4 [&_img]:rounded-xl [&_img]:shadow-lg [&_img]:shadow-cyan-500/40 dark:[&_img]:shadow-pink-500/40 [&_img]:mb-4 [&_p]:text-sm [&_p]:font-light [&_a]:link-secondary [&_a]:link-hover"
           v-html="latestPost.content"
           v-if="latestPost"
         ></div>

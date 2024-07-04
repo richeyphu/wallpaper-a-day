@@ -14,7 +14,7 @@ useHead({
 </script>
 
 <template>
-  <div id="app">
+  <div id="app" class="[&>*]:transition-colors [&>*]:duration-300">
     <Navbar />
     <slot />
   </div>

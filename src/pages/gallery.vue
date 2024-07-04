@@ -43,7 +43,7 @@ const scrollToTop = () => {
         <div
           v-for="post in posts"
           :key="post.title"
-          class="card shadow-lg hover:scale-105 transition-transform"
+          class="card shadow-lg hover:scale-105 hover:shadow-cyan-500/40 dark:hover:shadow-pink-500/40 transition-all duration-300"
         >
           <NuxtLink
             :to="post.URL"
@@ -63,7 +63,11 @@ const scrollToTop = () => {
         </div>
       </div>
       <div class="text-center mt-10">
-        <button class="btn btn-ghost" @click="scrollToTop" aria-label="Go to top">
+        <button
+          class="btn btn-ghost"
+          @click="scrollToTop"
+          aria-label="Go to top"
+        >
           <Icon name="fe:arrow-up" class="text-lg" />
         </button>
       </div>
