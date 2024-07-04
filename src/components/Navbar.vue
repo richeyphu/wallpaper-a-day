@@ -14,7 +14,12 @@
       <ThemeToggle />
 
       <div class="dropdown dropdown-end">
-        <div tabindex="0" role="button" class="btn btn-ghost p-3">
+        <div
+          tabindex="0"
+          role="button"
+          class="btn btn-ghost p-3"
+          aria-label="Menu"
+        >
           <Icon name="fe:bar" class="text-2xl" />
         </div>
         <ul

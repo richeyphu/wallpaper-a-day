@@ -7,7 +7,7 @@ onMounted(() => {
   themeChange(false);
 
   const savedTheme = localStorage.getItem("theme");
-  
+
   if (savedTheme) {
     colorTheme.value = savedTheme;
   } else {
@@ -31,6 +31,7 @@ const toggleTheme = () => {
     data-act-class="ACTIVECLASS"
     class="btn btn-ghost p-3"
     @click="toggleTheme"
+    aria-label="Toggle theme"
   >
     <Icon
       v-if="colorTheme === 'light'"
