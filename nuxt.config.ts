@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   compatibilityDate: "2024-07-04",
-  srcDir: "./app",
+  srcDir: "./src",
   modules: ["@nuxtjs/tailwindcss", "@nuxtjs/google-fonts"],
   tailwindcss: {
     editorSupport: true,
