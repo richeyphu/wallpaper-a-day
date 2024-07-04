@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+useHead({
+  title: "wallpaper a day / gallery",
+});
 
 interface Post {
   title: string;
@@ -43,7 +45,7 @@ onMounted(async () => {
   <div class="bg-base-200 min-h-screen py-20">
     <div class="container px-4 mx-auto">
       <h2
-        class="text-center my-8 drop-shadow-sm font-bold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"
+        class="text-center my-8 py-1 drop-shadow-sm font-bold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"
       >
         Gallery
       </h2>
@@ -68,9 +70,7 @@ onMounted(async () => {
         </div>
       </div>
       <div class="text-center mt-10">
-        <NuxtLink class="btn btn-outline btn-primary" to="/">
-          Home
-        </NuxtLink>
+        <NuxtLink class="btn btn-outline btn-primary" to="/"> Home </NuxtLink>
       </div>
     </div>
   </div>

@@ -36,7 +36,7 @@
       <NuxtLink
         class="btn btn-ghost text-xl drop-shadow-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"
         to="/"
-        >Wallpaper A Day</NuxtLink
+        >wallpaper a day</NuxtLink
       >
     </div>
     <!-- <div class="navbar-center hidden lg:flex">
