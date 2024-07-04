@@ -47,7 +47,7 @@ const scrollToTop = () => {
             target="_blank"
             aria-label="View wallpaper"
           >
-            <NuxtImg
+            <NuxtPicture
               :src="
                 post.attachments[Object.keys(post.attachments)[0]].thumbnails
                   .large
@@ -59,6 +59,7 @@ const scrollToTop = () => {
                   .thumbnail
               "
               placeholder-class="skeleton blur-[2px]"
+              format="webp"
             />
           </NuxtLink>
         </div>
