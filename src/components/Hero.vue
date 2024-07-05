@@ -39,7 +39,7 @@ onMounted(async () => {
           ></div>
         </div>
         <NuxtLink class="mt-1 btn btn-outline btn-secondary" to="/gallery">
-          Explore gallery
+          Explore more
         </NuxtLink>
       </div>
     </div>
