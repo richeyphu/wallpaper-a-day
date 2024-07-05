@@ -1,6 +1,11 @@
-export { Post };
+export { GetPosts, Post };
 
 declare global {
+  interface GetPosts {
+    found: number;
+    posts: Post[];
+  }
+
   interface Post {
     title: string;
     content: HTMLBodyElement;
