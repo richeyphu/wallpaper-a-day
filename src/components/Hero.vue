@@ -30,7 +30,7 @@ onMounted(async () => {
         </h1>
         <div v-if="loading" class="max-w-4xl py-5">
           <div
-            class="mt-8 mb-8 w-full h-[524px] aspect-video skeleton rounded-xl shadow-xl"
+            class="mt-8 mb-8 w-[calc(100vw-2.2rem)] lg:w-full lg:h-[524px] aspect-video skeleton rounded-xl shadow-xl"
           ></div>
         </div>
         <div v-else>
