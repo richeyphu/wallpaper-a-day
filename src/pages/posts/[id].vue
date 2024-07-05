@@ -8,6 +8,21 @@ const { data, pending, error } = await useFetch<Post>(apiUrl);
 if (error.value) {
   console.error("Failed to fetch post:", error.value);
 }
+
+const title = computed(() => {
+  if (data.value?.date) {
+    return new Date(data.value.date).toLocaleDateString("ja-JP", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  }
+  return "not found"; // Fallback title
+});
+
+useHead({
+  title: `wallpaper a day / ${title.value}`,
+});
 </script>
 
 <template>
@@ -18,13 +33,7 @@ if (error.value) {
           v-if="data"
           class="py-1 drop-shadow-sm font-bold text-transparent text-3xl md:text-5xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"
         >
-          {{
-            new Date(data.date).toLocaleDateString("ja-JP", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })
-          }}
+          {{ title }}
         </h1>
         <div v-if="pending" class="max-w-4xl py-5">
           <div
