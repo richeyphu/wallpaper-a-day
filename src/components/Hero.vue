@@ -3,14 +3,29 @@ const latestPost = ref<Post | null>(null);
 const loading = ref(true);
 
 onMounted(async () => {
+  // Attempt to use cached data first
+  const cachedPost = sessionStorage.getItem("latestPost");
+  if (cachedPost) {
+    latestPost.value = JSON.parse(cachedPost);
+    loading.value = false; // Assume not loading if cached data is used
+  }
+
   try {
     const response = await fetch(`${CMS_URL}/posts?number=1`);
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
     const data = await response.json();
-    latestPost.value = data.posts[0];
-    loading.value = false;
+    const newPost = data.posts[0];
+
+    // Compare fetched data with cached data
+    if (!cachedPost || JSON.stringify(newPost) !== cachedPost) {
+      console.log("Latest post has changed or not cached. Updating cache.");
+      sessionStorage.setItem("latestPost", JSON.stringify(newPost));
+      latestPost.value = newPost;
+      loading.value = false;
+    }
+    // If data is the same and we used cached data, no further action needed
   } catch (error) {
     console.error("Error fetching latest post:", error);
   }

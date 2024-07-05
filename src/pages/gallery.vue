@@ -7,14 +7,33 @@ const posts = ref<Post[] | null>(null);
 const loading = ref(true);
 
 onMounted(async () => {
+  let cachedData = null;
+  const cachedPosts = sessionStorage.getItem("posts");
+
+  // Use cached data immediately if available
+  if (cachedPosts) {
+    cachedData = JSON.parse(cachedPosts);
+    posts.value = cachedData;
+    loading.value = false; // Assume not loading if cached data is used
+  }
+
   try {
     const response = await fetch(`${CMS_URL}/posts?number=60`);
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
     const data = await response.json();
-    posts.value = data.posts;
-    loading.value = false;
+    // Compare fetched data with cached data
+    if (
+      !cachedData ||
+      JSON.stringify(data.posts) !== JSON.stringify(cachedData)
+    ) {
+      console.log("Data has changed or not cached. Updating cache.");
+      sessionStorage.setItem("posts", JSON.stringify(data.posts));
+      posts.value = data.posts;
+      loading.value = false;
+    }
+    // If data is the same and we used cached data, no further action needed
   } catch (error) {
     console.error("Error fetching latest post:", error);
   }
@@ -61,7 +80,7 @@ const scrollToTop = () => {
                 post.attachments[Object.keys(post.attachments)[0]].thumbnails
                   .thumbnail
               "
-              placeholder-class="skeleton blur-[2px]"
+              placeholder-class="skeleton blur-[1px]"
               format="webp"
               width="1024"
               height="576"
