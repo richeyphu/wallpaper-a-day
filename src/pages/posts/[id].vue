@@ -47,7 +47,7 @@ useHead({
             v-if="data"
           ></div>
         </div>
-        <NuxtLink class="mt-1 btn btn-ghost" to="/gallery">
+        <NuxtLink class="mt-1 btn btn-ghost" @click="$router.back">
           <Icon name="fe:home" class="text-lg" aria-label="Go back" />
         </NuxtLink>
       </div>
