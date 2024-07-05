@@ -49,12 +49,7 @@ const scrollToTop = () => {
           :key="post.title"
           class="card shadow-lg hover:scale-105 hover:shadow-cyan-500/40 dark:hover:shadow-pink-500/40 transition-all duration-300"
         >
-          <NuxtLink
-            :to="post.URL"
-            class=""
-            target="_blank"
-            aria-label="View wallpaper"
-          >
+          <NuxtLink :to="`/posts/${post.ID}`" aria-label="View wallpaper">
             <NuxtImg
               :src="
                 post.attachments[Object.keys(post.attachments)[0]].thumbnails

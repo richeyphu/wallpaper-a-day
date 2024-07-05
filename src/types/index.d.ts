@@ -7,6 +7,9 @@ declare global {
   }
 
   interface Post {
+    ID: number;
+    date: Date;
+    modified: Date;
     title: string;
     content: HTMLBodyElement;
     URL: string;
