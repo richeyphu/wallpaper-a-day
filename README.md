@@ -2,7 +2,7 @@
 
 [![cover](public/images/cover.png)](https://wallpaper-a-day.vercel.app/)
 
-Reimagine your favorite everyday anime wallpaper website. Contents provided by courtesy of [Wallpaper A Day](https://wallpaper-a-day.com/).
+Reimagine your favorite everyday anime wallpaper website with [Nuxt](https://nuxt.com/) + [WordPress REST API](https://developer.wordpress.org/rest-api/). Contents provided by courtesy of [Wallpaper A Day](https://wallpaper-a-day.com/).
 
 <!-- 
 # Nuxt 3 Minimal Starter
