@@ -29,23 +29,32 @@
           class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
         >
           <li>
-            <NuxtLink to="/">Home</NuxtLink>
+            <NuxtLink to="/">
+              <Icon name="fe:home" class="text-xl" />
+              Home
+            </NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/gallery">Gallery</NuxtLink>
+            <NuxtLink to="/gallery">
+              <Icon name="fe:picture" class="text-xl" />
+              Gallery
+            </NuxtLink>
           </li>
           <div class="divider my-0"></div>
           <li>
-            <NuxtLink to="https://wallpaper-a-day.com/" target="_blank"
-              >Visit original site</NuxtLink
-            >
+            <NuxtLink to="https://wallpaper-a-day.com/" target="_blank">
+              <Icon name="fe:wordpress-alt" class="text-xl" />
+              Visit original site
+            </NuxtLink>
           </li>
           <li>
             <NuxtLink
               to="https://github.com/richeyphu/wallpaper-a-day"
               target="_blank"
-              >GitHub</NuxtLink
             >
+              <Icon name="fe:github-alt" class="text-xl" />
+              GitHub
+            </NuxtLink>
           </li>
         </ul>
       </div>
