@@ -47,11 +47,14 @@ const scrollToTop = () => {
 <template>
   <div class="bg-base-200 min-h-screen py-20">
     <div class="container px-4 mx-auto">
-      <h2
-        class="text-center my-16 py-1 drop-shadow-sm font-bold text-transparent text-3xl md:text-4xl lg:text-5xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"
-      >
-        Gallery
-      </h2>
+      <div class="text-center my-16">
+        <h2
+          class="py-1 drop-shadow-sm font-bold text-transparent text-3xl md:text-4xl lg:text-5xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"
+        >
+          Gallery
+        </h2>
+        <p class="font-extralight tracking-[0.12em] mt-1">a wallpaper a day</p>
+      </div>
       <div
         v-if="loading"
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 mt-4"
