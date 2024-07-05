@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const title = "wallpaper a day";
+const title = WEBSITE_TITLE;
 const description = "Favorite daily anime wallpaper site reimagined.";
 const url = "https://wallpaper-a-day.vercel.app";
 

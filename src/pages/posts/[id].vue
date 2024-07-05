@@ -21,7 +21,7 @@ const title = computed(() => {
 });
 
 useHead({
-  title: `wallpaper a day / ${title.value}`,
+  title: `${WEBSITE_TITLE} / ${title.value}`,
 });
 </script>
 

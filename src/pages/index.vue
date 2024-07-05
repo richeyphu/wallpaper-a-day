@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useHead({
-  title: "wallpaper a day",
+  title: `${WEBSITE_TITLE}`,
 });
 
 const { data: visitsData } = await useFetch<{ value: number }>(

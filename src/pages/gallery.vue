@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useHead({
-  title: "wallpaper a day / gallery",
+  title: `${WEBSITE_TITLE} / gallery`,
 });
 
 const posts = ref<Post[] | null>(null);
