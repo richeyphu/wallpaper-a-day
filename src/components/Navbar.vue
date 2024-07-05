@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="navbar bg-base-100 fixed shadow-md z-[1] rounded-b-2xl transition-colors duration-300 bg-opacity-70 backdrop-blur"
+    class="navbar bg-base-100 fixed shadow-md z-[1] rounded-b-2xl bg-opacity-70 backdrop-blur"
   >
     <div class="navbar-start">
       <NuxtLink
@@ -26,7 +26,7 @@
         </div>
         <ul
           tabindex="0"
-          class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+          class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow bg-opacity-90 backdrop-blur"
         >
           <li>
             <NuxtLink to="/">
@@ -53,7 +53,7 @@
               target="_blank"
             >
               <Icon name="fe:github-alt" class="text-xl" />
-              GitHub
+              View source
             </NuxtLink>
           </li>
         </ul>
