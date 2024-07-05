@@ -68,7 +68,8 @@ const scrollToTop = () => {
               "
               placeholder-class="skeleton blur-[2px]"
               format="webp"
-              sizes="1024px"
+              width="1024"
+              height="576"
             />
           </NuxtLink>
         </div>
