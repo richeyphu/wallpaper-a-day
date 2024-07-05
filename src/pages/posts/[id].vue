@@ -21,7 +21,7 @@ const title = computed(() => {
 });
 
 useHead({
-  title: `${WEBSITE_TITLE} / ${title.value}`,
+  title: `${title.value} / ${WEBSITE_TITLE}`,
 });
 </script>
 

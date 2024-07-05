@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useHead({
-  title: `${WEBSITE_TITLE} / gallery`,
+  title: `gallery / ${WEBSITE_TITLE}`,
 });
 
 const posts = ref<Post[] | null>(null);
