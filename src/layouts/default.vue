@@ -32,7 +32,7 @@ useSeoMeta({
   twitterTitle: title,
   twitterDescription: description,
   twitterImage: ogImage,
-  twitterCard: "summary",
+  twitterCard: "summary_large_image",
 });
 </script>
 
