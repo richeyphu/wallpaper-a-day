@@ -2,6 +2,7 @@
 const title = WEBSITE_TITLE;
 const description = "Favorite daily anime wallpaper site reimagined.";
 const url = "https://wallpaper-a-day.vercel.app";
+const ogImage = `${url}/images/cover.png`;
 
 useHead({
   title: title,
@@ -26,11 +27,11 @@ useHead({
 useSeoMeta({
   ogTitle: title,
   ogDescription: description,
-  // ogImage: "[og:image]",
+  ogImage: ogImage,
   ogUrl: url,
   twitterTitle: title,
   twitterDescription: description,
-  // twitterImage: "[twitter:image]",
+  twitterImage: ogImage,
   twitterCard: "summary",
 });
 </script>
