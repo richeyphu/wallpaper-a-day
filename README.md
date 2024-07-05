@@ -1,6 +1,6 @@
 # wallpaper a day
 
-![cover](public/imgages/cover.png)
+![cover](public/images/cover.png)
 
 <!-- 
 # Nuxt 3 Minimal Starter
