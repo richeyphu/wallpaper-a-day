@@ -1,5 +1,7 @@
 <template>
-  <nav class="navbar bg-base-100 absolute z-[1]">
+  <nav
+    class="navbar bg-base-100 fixed shadow-md z-[1] rounded-b-2xl transition-colors duration-300 bg-opacity-70 backdrop-blur"
+  >
     <div class="navbar-start">
       <NuxtLink
         class="btn btn-ghost text-xl drop-shadow-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"
