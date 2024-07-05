@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { CMS_URL } from "~/utils";
-
 useHead({
   title: "wallpaper a day / gallery",
 });

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { CMS_URL } from "~/utils";
-
 const latestPost = ref<Post | null>(null);
 const loading = ref(true);
 

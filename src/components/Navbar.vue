@@ -42,14 +42,14 @@
           </li>
           <div class="divider my-0"></div>
           <li>
-            <NuxtLink to="https://wallpaper-a-day.com/" target="_blank">
+            <NuxtLink :to="ORIGINAL_SITE_URL" target="_blank">
               <Icon name="fe:wordpress-alt" class="text-xl" />
               Visit original site
             </NuxtLink>
           </li>
           <li>
             <NuxtLink
-              to="https://github.com/richeyphu/wallpaper-a-day"
+              :to="GITHUB_REPO_URL"
               target="_blank"
             >
               <Icon name="fe:github-alt" class="text-xl" />
