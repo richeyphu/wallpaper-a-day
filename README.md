@@ -1,6 +1,8 @@
 # wallpaper a day
 
-![cover](public/images/cover.png)
+[![cover](public/images/cover.png)](https://wallpaper-a-day.vercel.app/)
+
+Reimagine your favorite everyday anime wallpaper website. Contents provided by courtesy of [Wallpaper A Day](https://wallpaper-a-day.com/).
 
 <!-- 
 # Nuxt 3 Minimal Starter
