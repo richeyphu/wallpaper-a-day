@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { SpeedInsights } from "@vercel/speed-insights/vue";
+
 const title = WEBSITE_TITLE;
 const description = "Favorite daily anime wallpaper site reimagined.";
 const url = "https://wallpaper-a-day.vercel.app";
@@ -41,6 +43,7 @@ useSeoMeta({
     <Navbar />
     <slot />
   </div>
+  <SpeedInsights />
 </template>
 
 <style scoped>
