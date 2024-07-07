@@ -38,21 +38,17 @@ useHead({
   ],
 });
 
-useSeoMeta({
-  ogTitle: "%s %separator %site.name",
-  ogDescription: description,
-  ogImage: ogImage,
-  ogUrl: "%site.url" + route.fullPath,
-  twitterTitle: "%s %separator %site.name",
-  twitterDescription: description,
-  twitterImage: ogImage,
-  twitterCard: "summary_large_image",
-});
-
 watchEffect(() => {
-  // Update url dynamically
+  // Update seo meta dynamically
   useSeoMeta({
+    ogTitle: "%s %separator %site.name",
+    ogDescription: description,
+    ogImage: ogImage,
     ogUrl: url,
+    twitterTitle: "%s %separator %site.name",
+    twitterDescription: description,
+    twitterImage: ogImage,
+    twitterCard: "summary_large_image",
   });
 });
 </script>
