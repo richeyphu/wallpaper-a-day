@@ -3,11 +3,13 @@ import { SpeedInsights } from "@vercel/speed-insights/vue";
 
 const route = useRoute();
 const config = useRuntimeConfig();
+
 const title = WEBSITE_TITLE;
 const description = "Favorite daily anime wallpaper site reimagined.";
 const baseUrl = config.public.baseUrl;
-const url = baseUrl + route.fullPath;
 const ogImage = `${baseUrl}/images/cover.png`;
+
+const url = computed(() => config.public.baseUrl + route.fullPath);
 
 useHead({
   title: title,
@@ -33,11 +35,17 @@ useSeoMeta({
   ogTitle: title,
   ogDescription: description,
   ogImage: ogImage,
-  ogUrl: url,
   twitterTitle: title,
   twitterDescription: description,
   twitterImage: ogImage,
   twitterCard: "summary_large_image",
+});
+
+watchEffect(() => {
+  // Update url dynamically
+  useSeoMeta({
+    ogUrl: url,
+  });
 });
 </script>
 
