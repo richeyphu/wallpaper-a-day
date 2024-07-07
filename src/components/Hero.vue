@@ -15,8 +15,9 @@ onMounted(async () => {
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
-    const data = await response.json();
+    const data = (await response.json()) as GetPostsResponse;
     const newPost = data.posts[0];
+    newPost.content = modifyContent(newPost.content);
 
     // Compare fetched data with cached data
     if (!cachedPost || JSON.stringify(newPost) !== cachedPost) {
@@ -30,6 +31,8 @@ onMounted(async () => {
     console.error("Error fetching latest post:", error);
   }
 });
+
+
 </script>
 
 <template>
