@@ -12,7 +12,14 @@ const ogImage = `${baseUrl}/images/cover.png`;
 const url = computed(() => config.public.baseUrl + route.fullPath);
 
 useHead({
-  title: title,
+  templateParams: {
+    site: {
+      name: title,
+      url: baseUrl,
+    },
+    separator: "/",
+  },
+  titleTemplate: "%s %separator %site.name",
   meta: [
     {
       name: "description",
@@ -32,10 +39,11 @@ useHead({
 });
 
 useSeoMeta({
-  ogTitle: title,
+  ogTitle: "%s %separator %site.name",
   ogDescription: description,
   ogImage: ogImage,
-  twitterTitle: title,
+  ogUrl: "%site.url" + route.fullPath,
+  twitterTitle: "%s %separator %site.name",
   twitterDescription: description,
   twitterImage: ogImage,
   twitterCard: "summary_large_image",

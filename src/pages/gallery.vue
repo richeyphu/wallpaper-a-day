@@ -1,8 +1,4 @@
 <script setup lang="ts">
-useHead({
-  title: `gallery / ${WEBSITE_TITLE}`,
-});
-
 const posts = ref<Post[] | null>(null);
 const loading = ref(true);
 
@@ -37,6 +33,10 @@ onMounted(async () => {
   } catch (error) {
     console.error("Error fetching latest post:", error);
   }
+
+  useHead({
+    title: "gallery",
+  });
 });
 
 const scrollToTop = () => {

@@ -9,11 +9,11 @@ const { data: visitsData } = await useFetch<{ value: number }>(
 );
 
 watch(visitsData, (value) => {
-  console.log({...value});
+  console.log({ ...value });
 });
 
 useHead({
-  title: `${WEBSITE_TITLE}`,
+  titleTemplate: "%site.name",
 });
 </script>
 

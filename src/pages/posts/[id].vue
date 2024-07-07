@@ -26,15 +26,8 @@ onMounted(() => {
   }
 });
 
-const metaTitle = `${title.value} / ${WEBSITE_TITLE}`;
-
 useHead({
-  title: metaTitle,
-});
-
-useSeoMeta({
-  ogTitle: metaTitle,
-  twitterTitle: metaTitle,
+  title: title.value,
 });
 </script>
 
