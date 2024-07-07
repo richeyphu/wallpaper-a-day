@@ -1,27 +1,27 @@
-export { GetPosts, Post };
+export { GetPosts, Post }
 
 declare global {
   interface GetPostsResponse {
-    found: number;
-    posts: Post[];
+    found: number
+    posts: Post[]
   }
 
   interface Post {
-    ID: number;
-    date: Date;
-    modified: Date;
-    title: string;
-    content: string;
-    URL: string;
+    ID: number
+    date: Date
+    modified: Date
+    title: string
+    content: string
+    URL: string
     attachments: {
       [key: string]: {
-        URL: string;
+        URL: string
         thumbnails: {
-          thumbnail: string;
-          medium: string;
-          large: string;
-        };
-      };
-    };
+          thumbnail: string
+          medium: string
+          large: string
+        }
+      }
+    }
   }
 }

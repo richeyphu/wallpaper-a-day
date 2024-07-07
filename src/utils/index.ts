@@ -1,2 +1,2 @@
-export * from "./constants";
-export * from "./contentParser";
+export * from './constants'
+export * from './contentParser'

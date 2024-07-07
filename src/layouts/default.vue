@@ -1,65 +1,65 @@
 <script setup lang="ts">
-import { SpeedInsights } from "@vercel/speed-insights/vue";
+  import { SpeedInsights } from '@vercel/speed-insights/vue'
 
-const route = useRoute();
-const config = useRuntimeConfig();
+  const route = useRoute()
+  const config = useRuntimeConfig()
 
-const title = WEBSITE_TITLE;
-const description = "Favorite daily anime wallpaper site reimagined.";
-const baseUrl = config.public.baseUrl;
-const ogImage = `${baseUrl}/images/cover.png`;
+  const title = WEBSITE_TITLE
+  const description = 'Favorite daily anime wallpaper site reimagined.'
+  const baseUrl = config.public.baseUrl
+  const ogImage = `${baseUrl}/images/cover.png`
 
-useHead({
-  templateParams: {
-    site: {
-      name: title,
-      url: baseUrl,
+  useHead({
+    templateParams: {
+      site: {
+        name: title,
+        url: baseUrl
+      },
+      separator: '/'
     },
-    separator: "/",
-  },
-  titleTemplate: "%s %separator %site.name",
-  meta: [
-    {
-      name: "description",
-      content: description,
+    titleTemplate: '%s %separator %site.name',
+    meta: [
+      {
+        name: 'description',
+        content: description
+      }
+    ],
+    htmlAttrs: {
+      lang: 'en'
     },
-  ],
-  htmlAttrs: {
-    lang: "en",
-  },
-  link: [
-    {
-      rel: "icon",
-      type: "image/x-icon",
-      href: "/favicon.ico",
-    },
-  ],
-});
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico'
+      }
+    ]
+  })
 
-useSeoMeta({
-  ogTitle: "%s %separator %site.name",
-  ogDescription: description,
-  ogImage: ogImage,
-  ogUrl: "%site.url" + route.fullPath,
-  twitterTitle: "%s %separator %site.name",
-  twitterDescription: description,
-  twitterImage: ogImage,
-  twitterCard: "summary_large_image",
-});
+  useSeoMeta({
+    ogTitle: '%s %separator %site.name',
+    ogDescription: description,
+    ogImage: ogImage,
+    ogUrl: '%site.url' + route.fullPath,
+    twitterTitle: '%s %separator %site.name',
+    twitterDescription: description,
+    twitterImage: ogImage,
+    twitterCard: 'summary_large_image'
+  })
 </script>
 
 <template>
   <!-- <div> -->
-    <div id="app" class="[&>*]:transition-colors [&>*]:duration-300">
-      <Navbar />
-      <slot />
-    </div>
-    <SpeedInsights />
+  <div id="app" class="[&>*]:transition-colors [&>*]:duration-300">
+    <Navbar />
+    <slot />
+  </div>
+  <SpeedInsights />
   <!-- </div> -->
 </template>
 
 <style scoped>
-#app {
-  font-family: "Noto Sans Thai", sans-serif;
-}
+  #app {
+    font-family: 'Noto Sans Thai', sans-serif;
+  }
 </style>

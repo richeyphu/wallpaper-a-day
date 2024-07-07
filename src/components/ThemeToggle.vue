@@ -1,37 +1,37 @@
 <script setup lang="ts">
-import { themeChange } from "theme-change";
+  import { themeChange } from 'theme-change'
 
-const colorTheme = ref<string | null>();
+  const colorTheme = ref<string | null>()
 
-onMounted(() => {
-  themeChange(false);
+  onMounted(() => {
+    themeChange(false)
 
-  const savedTheme = localStorage.getItem("theme");
+    const savedTheme = localStorage.getItem('theme')
 
-  if (savedTheme) {
-    colorTheme.value = savedTheme;
-  } else {
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-    const prefersTheme = prefersDark ? "dark" : "light";
-    document.documentElement.setAttribute("data-theme", prefersTheme);
-    colorTheme.value = prefersTheme;
-    localStorage.setItem("theme", prefersTheme);
+    if (savedTheme) {
+      colorTheme.value = savedTheme
+    } else {
+      const prefersDark = window.matchMedia(
+        '(prefers-color-scheme: dark)'
+      ).matches
+      const prefersTheme = prefersDark ? 'dark' : 'light'
+      document.documentElement.setAttribute('data-theme', prefersTheme)
+      colorTheme.value = prefersTheme
+      localStorage.setItem('theme', prefersTheme)
+    }
+  })
+
+  const toggleTheme = () => {
+    colorTheme.value = colorTheme.value === 'dark' ? 'light' : 'dark'
+    localStorage.setItem('theme', colorTheme.value)
   }
-});
-
-const toggleTheme = () => {
-  colorTheme.value = colorTheme.value === "dark" ? "light" : "dark";
-  localStorage.setItem("theme", colorTheme.value);
-};
 </script>
 
 <template>
   <button
     data-toggle-theme="dark,light"
     data-act-class="ACTIVECLASS"
-    class="btn btn-ghost btn-square"
+    class="btn btn-square btn-ghost"
     aria-label="Toggle theme"
     @click="toggleTheme"
   >
