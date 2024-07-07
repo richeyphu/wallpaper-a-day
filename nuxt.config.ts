@@ -23,7 +23,11 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      baseUrl: "" ?? "http://localhost:3000",
+      baseUrl:
+        "" ||
+        (process.env.NODE_ENV === "production"
+          ? "https://wallpaper-a-day.vercel.app"
+          : "http://localhost:3000"),
       countApiUrl: "",
     },
   },
