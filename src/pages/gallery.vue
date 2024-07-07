@@ -33,15 +33,15 @@ onMounted(async () => {
   } catch (error) {
     console.error("Error fetching latest post:", error);
   }
-
-  useHead({
-    title: "gallery",
-  });
 });
 
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
+
+useHead({
+  title: "gallery",
+});
 </script>
 
 <template>

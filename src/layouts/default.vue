@@ -9,8 +9,6 @@ const description = "Favorite daily anime wallpaper site reimagined.";
 const baseUrl = config.public.baseUrl;
 const ogImage = `${baseUrl}/images/cover.png`;
 
-const url = computed(() => config.public.baseUrl + route.fullPath);
-
 useHead({
   templateParams: {
     site: {
@@ -38,18 +36,15 @@ useHead({
   ],
 });
 
-watchEffect(() => {
-  // Update seo meta dynamically
-  useSeoMeta({
-    ogTitle: "%s %separator %site.name",
-    ogDescription: description,
-    ogImage: ogImage,
-    ogUrl: url,
-    twitterTitle: "%s %separator %site.name",
-    twitterDescription: description,
-    twitterImage: ogImage,
-    twitterCard: "summary_large_image",
-  });
+useSeoMeta({
+  ogTitle: "%s %separator %site.name",
+  ogDescription: description,
+  ogImage: ogImage,
+  ogUrl: "%site.url" + route.fullPath,
+  twitterTitle: "%s %separator %site.name",
+  twitterDescription: description,
+  twitterImage: ogImage,
+  twitterCard: "summary_large_image",
 });
 </script>
 
