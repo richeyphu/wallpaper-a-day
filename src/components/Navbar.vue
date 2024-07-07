@@ -19,7 +19,7 @@
         <div
           tabindex="0"
           role="button"
-          class="btn btn-ghost p-3"
+          class="btn btn-ghost btn-square"
           aria-label="Menu"
         >
           <Icon name="fe:bar" class="text-2xl" />

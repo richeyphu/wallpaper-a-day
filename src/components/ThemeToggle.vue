@@ -31,7 +31,7 @@ const toggleTheme = () => {
   <button
     data-toggle-theme="dark,light"
     data-act-class="ACTIVECLASS"
-    class="btn btn-ghost p-3"
+    class="btn btn-ghost btn-square"
     @click="toggleTheme"
     aria-label="Toggle theme"
   >

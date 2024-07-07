@@ -93,7 +93,7 @@ const scrollToTop = () => {
       </div>
       <div class="text-center mt-10">
         <button
-          class="btn btn-ghost"
+          class="btn btn-ghost btn-square"
           @click="scrollToTop"
           aria-label="Go to top"
         >
