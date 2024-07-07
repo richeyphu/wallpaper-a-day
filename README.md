@@ -12,7 +12,9 @@
   <i>a wallpaper a day...</i>
 </p>
 
-Reimagine your favorite everyday anime wallpaper website with [Nuxt](https://nuxt.com/) + [WordPress REST API](https://developer.wordpress.org/rest-api/). The contents are provided courtesy of [Wallpaper A Day](https://wallpaper-a-day.com/).
+Reimagine your favorite everyday anime wallpaper website with [Nuxt](https://nuxt.com/) + [WordPress REST API](https://developer.wordpress.org/rest-api/).
+
+> The contents are provided courtesy of [Wallpaper A Day](https://wallpaper-a-day.com/).
 
 <!--
 # Nuxt 3 Minimal Starter
