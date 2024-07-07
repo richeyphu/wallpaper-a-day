@@ -1,7 +1,7 @@
 export { GetPosts, Post };
 
 declare global {
-  interface GetPosts {
+  interface GetPostsResponse {
     found: number;
     posts: Post[];
   }
@@ -11,7 +11,7 @@ declare global {
     date: Date;
     modified: Date;
     title: string;
-    content: HTMLBodyElement;
+    content: string;
     URL: string;
     attachments: {
       [key: string]: {
