@@ -9,10 +9,6 @@ if (error.value) {
   console.error("Failed to fetch post:", error.value);
 }
 
-if (data.value) {
-  data.value.content = modifyContent(data.value.content);
-}
-
 const title = computed(() => {
   if (data.value?.date) {
     return new Date(data.value.date).toLocaleDateString("ja-JP", {
@@ -22,6 +18,12 @@ const title = computed(() => {
     });
   }
   return "not found"; // Fallback title
+});
+
+onMounted(() => {
+  if (data.value) {
+    data.value.content = modifyContent(data.value.content);
+  }
 });
 
 useHead({
