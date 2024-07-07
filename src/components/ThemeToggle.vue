@@ -32,8 +32,8 @@ const toggleTheme = () => {
     data-toggle-theme="dark,light"
     data-act-class="ACTIVECLASS"
     class="btn btn-ghost btn-square"
-    @click="toggleTheme"
     aria-label="Toggle theme"
+    @click="toggleTheme"
   >
     <Icon
       v-if="colorTheme === 'light'"

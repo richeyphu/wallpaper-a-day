@@ -44,14 +44,14 @@ useHead({
         <div v-if="pending" class="max-w-4xl py-5">
           <div
             class="mt-8 mb-8 w-[calc(100vw-2.2rem)] lg:w-full lg:h-[524px] aspect-video skeleton rounded-xl shadow-xl"
-          ></div>
+          />
         </div>
         <div v-else>
           <div
+            v-if="data"
             class="mt-8 mb-4 [&_img]:rounded-xl [&_img]:shadow-lg [&_img]:shadow-cyan-500/40 dark:[&_img]:shadow-pink-500/40 [&_img]:mb-8 [&_p]:text-sm [&_p]:font-light [&_a]:link-secondary [&_a]:link-hover"
             v-html="data.content"
-            v-if="data"
-          ></div>
+          />
         </div>
         <NuxtLink class="mt-1 btn btn-ghost btn-square" @click="$router.back">
           <Icon name="fe:home" class="text-lg" aria-label="Go back" />

@@ -10,7 +10,7 @@
       >
     </div>
 
-    <div class="navbar-center flex"></div>
+    <div class="navbar-center flex"/>
 
     <div class="navbar-end">
       <ThemeToggle />
@@ -40,7 +40,7 @@
               Gallery
             </NuxtLink>
           </li>
-          <div class="divider my-0"></div>
+          <div class="divider my-0"/>
           <li>
             <NuxtLink :to="ORIGINAL_SITE_URL" target="_blank">
               <Icon name="fe:wordpress-alt" class="text-xl" />

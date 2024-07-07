@@ -60,7 +60,7 @@ useHead({
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 mt-4"
       >
         <div v-for="n in 60" :key="n">
-          <div class="aspect-video skeleton"></div>
+          <div class="aspect-video skeleton"/>
         </div>
       </div>
       <div
@@ -94,8 +94,8 @@ useHead({
       <div class="text-center mt-10">
         <button
           class="btn btn-ghost btn-square"
-          @click="scrollToTop"
           aria-label="Go to top"
+          @click="scrollToTop"
         >
           <Icon name="fe:arrow-up" class="text-lg" />
         </button>

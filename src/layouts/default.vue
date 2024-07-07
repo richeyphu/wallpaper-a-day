@@ -49,11 +49,13 @@ useSeoMeta({
 </script>
 
 <template>
-  <div id="app" class="[&>*]:transition-colors [&>*]:duration-300">
-    <Navbar />
-    <slot />
-  </div>
-  <SpeedInsights />
+  <!-- <div> -->
+    <div id="app" class="[&>*]:transition-colors [&>*]:duration-300">
+      <Navbar />
+      <slot />
+    </div>
+    <SpeedInsights />
+  <!-- </div> -->
 </template>
 
 <style scoped>
