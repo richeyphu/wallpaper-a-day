@@ -35,10 +35,6 @@
     }
   })
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
   useHead({
     title: 'gallery'
   })
@@ -92,13 +88,7 @@
         </div>
       </div>
       <div class="mt-10 text-center">
-        <button
-          class="btn btn-square btn-ghost"
-          aria-label="Go to top"
-          @click="scrollToTop"
-        >
-          <Icon name="fe:arrow-up" class="text-lg" />
-        </button>
+        <ScrollToTopButton />
       </div>
     </div>
   </div>
