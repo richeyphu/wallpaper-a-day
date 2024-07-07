@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { SpeedInsights } from "@vercel/speed-insights/vue";
 
+const route = useRoute();
 const config = useRuntimeConfig();
 const title = WEBSITE_TITLE;
 const description = "Favorite daily anime wallpaper site reimagined.";
-const url = config.public.baseUrl;
-const ogImage = `${url}/images/cover.png`;
+const baseUrl = config.public.baseUrl;
+const url = baseUrl + route.fullPath;
+const ogImage = `${baseUrl}/images/cover.png`;
 
 useHead({
   title: title,

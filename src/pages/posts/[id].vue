@@ -26,7 +26,6 @@ onMounted(() => {
   }
 });
 
-const config = useRuntimeConfig();
 const metaTitle = `${title.value} / ${WEBSITE_TITLE}`;
 
 useHead({
@@ -35,7 +34,6 @@ useHead({
 
 useSeoMeta({
   ogTitle: metaTitle,
-  ogUrl: config.public.baseUrl + route.fullPath,
   twitterTitle: metaTitle,
 });
 </script>
