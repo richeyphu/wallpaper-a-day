@@ -21,4 +21,10 @@ export default defineNuxtConfig({
       "Noto Sans Thai": "100..900",
     },
   },
+  runtimeConfig: {
+    public: {
+      baseUrl: "" ?? "http://localhost:3000",
+      countApiUrl: "",
+    },
+  },
 });

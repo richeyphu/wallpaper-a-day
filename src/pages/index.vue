@@ -1,17 +1,19 @@
 <script setup lang="ts">
-useHead({
-  title: `${WEBSITE_TITLE}`,
-});
+const config = useRuntimeConfig();
 
 const { data: visitsData } = await useFetch<{ value: number }>(
-  `${COUNTAPI_URL}/visits`,
+  `${config.public.countApiUrl}/visits`,
   {
     server: false,
   }
 );
 
 watch(visitsData, (value) => {
-  console.log(value?.value);
+  console.log({...value});
+});
+
+useHead({
+  title: `${WEBSITE_TITLE}`,
 });
 </script>
 

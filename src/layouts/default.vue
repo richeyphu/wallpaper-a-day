@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { SpeedInsights } from "@vercel/speed-insights/vue";
 
+const config = useRuntimeConfig();
 const title = WEBSITE_TITLE;
 const description = "Favorite daily anime wallpaper site reimagined.";
-const url = "https://wallpaper-a-day.vercel.app";
+const url = config.public.baseUrl;
 const ogImage = `${url}/images/cover.png`;
 
 useHead({
