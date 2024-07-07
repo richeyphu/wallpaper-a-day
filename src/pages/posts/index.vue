@@ -1,15 +1,111 @@
 <script setup lang="ts">
-  await navigateTo('/gallery')
+  const currentPage = ref(1)
+  const postsPerPage = ref(12)
+  const apiUrl = computed(
+    () =>
+      `${CMS_URL}/posts?number=${postsPerPage.value}&page=${currentPage.value}`
+  )
+
+  const { data, pending, error, refresh } = await useFetch<GetPostsResponse>(
+    apiUrl,
+    {
+      key: 'posts',
+      server: true
+    }
+  )
+
+  const totalPages = computed(() => {
+    if (!data.value) return 0
+    return Math.ceil(data.value.found / postsPerPage.value)
+  })
+
+  watch(currentPage, () => {
+    refresh()
+  })
+
+  if (error.value) {
+    console.error('Failed to fetch posts:', error.value)
+  }
+
+  useHead({
+    title: 'posts'
+  })
 </script>
 
 <template>
-  <div class="hero min-h-screen bg-base-200 py-20">
-    <div class="hero-content text-center">
-      <h1
-        class="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text py-1 text-3xl font-bold text-transparent drop-shadow-sm md:text-5xl"
+  <div class="min-h-screen bg-base-200 py-20">
+    <div class="container mx-auto px-4">
+      <div class="my-16 text-center">
+        <h2
+          class="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text py-1 text-3xl font-bold text-transparent drop-shadow-sm md:text-4xl lg:text-5xl"
+        >
+          Posts
+        </h2>
+        <p class="mt-1 font-extralight tracking-[0.12em]"
+          >{{ data?.found }} posts found</p
+        >
+      </div>
+      <div
+        v-if="pending"
+        class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4"
       >
-        Redirecting...
-      </h1>
+        <div v-for="n in 12" :key="n">
+          <div class="skeleton aspect-video" />
+        </div>
+      </div>
+      <div
+        v-else
+        class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4"
+      >
+        <div
+          v-for="post in data?.posts"
+          :key="post.title"
+          class="card shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-cyan-500/40 dark:hover:shadow-pink-500/40"
+        >
+          <NuxtLink :to="`/posts/${post.ID}`" aria-label="View wallpaper">
+            <NuxtImg
+              :src="
+                post.attachments[Object.keys(post.attachments)[0]].thumbnails
+                  .large
+              "
+              :alt="post.title"
+              class="card-image w-full rounded-xl"
+              :placeholder="
+                post.attachments[Object.keys(post.attachments)[0]].thumbnails
+                  .thumbnail
+              "
+              placeholder-class="skeleton blur-[1px]"
+              format="webp"
+              width="1024"
+              height="576"
+            />
+          </NuxtLink>
+        </div>
+      </div>
+      <div class="pagination mt-6 flex items-center justify-center space-x-2">
+        <button
+          :disabled="currentPage <= 1"
+          :class="{ 'btn-disabled': currentPage <= 1 }"
+          class="btn btn-outline btn-sm"
+          @click="currentPage--"
+        >
+          Previous
+        </button>
+        <span class="rounded bg-base-300 px-4 py-2 text-xs md:text-sm">
+          Page {{ currentPage }} of {{ totalPages }}
+        </span>
+        <button
+          :disabled="currentPage >= totalPages"
+          :class="{ 'btn-disabled': currentPage >= totalPages }"
+          class="btn btn-outline btn-sm"
+          @click="currentPage++"
+        >
+          Next
+        </button>
+      </div>
+      <div class="mt-10 text-center">
+        <ScrollToTopButton />
+      </div>
     </div>
   </div>
 </template>

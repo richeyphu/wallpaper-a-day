@@ -40,6 +40,12 @@
               Gallery
             </NuxtLink>
           </li>
+          <li>
+            <NuxtLink to="/posts">
+              <Icon name="fe:bookmark" class="text-xl" />
+              Posts
+            </NuxtLink>
+          </li>
           <div class="divider my-0" />
           <li>
             <NuxtLink :to="ORIGINAL_SITE_URL" target="_blank">
