@@ -92,27 +92,29 @@
         </div>
       </div>
       <div class="pagination mt-6 flex items-center justify-center space-x-2">
-        <button
-          :disabled="currentPage <= 1"
-          :class="{ 'btn-disabled': currentPage <= 1 }"
-          class="btn btn-outline btn-sm"
-          @click="currentPage--"
-        >
-          Previous
-        </button>
-        <span class="rounded bg-base-300 px-4 py-2 text-xs md:text-sm">
-          Page {{ currentPage }} of {{ totalPages }}
-        </span>
-        <button
-          :disabled="currentPage >= totalPages"
-          :class="{ 'btn-disabled': currentPage >= totalPages }"
-          class="btn btn-outline btn-sm"
-          @click="currentPage++"
-        >
-          Next
-        </button>
+        <div class="join shadow-sm">
+          <button
+            class="btn join-item"
+            :disabled="currentPage <= 1"
+            :class="{ 'btn-disabled': currentPage <= 1 }"
+            @click="currentPage--"
+          >
+            <Icon name="fe:arrow-left" />
+          </button>
+          <button class="btn join-item">
+            Page {{ currentPage }} of {{ totalPages }}
+          </button>
+          <button
+            :disabled="currentPage >= totalPages"
+            :class="{ 'btn-disabled': currentPage >= totalPages }"
+            class="btn join-item"
+            @click="currentPage++"
+          >
+            <Icon name="fe:arrow-right" />
+          </button>
+        </div>
       </div>
-      <div class="mt-10 text-center">
+      <div class="mt-4 text-center">
         <ScrollToTopButton />
       </div>
     </div>
