@@ -3,13 +3,13 @@
   const loading = ref(true)
 
   onMounted(async () => {
-    let cachedData = null
+    let cachedData: Post[] | null = null
     const cachedPosts = sessionStorage.getItem('posts')
 
     // Use cached data immediately if available
     if (cachedPosts) {
-      cachedData = JSON.parse(cachedPosts)
-      posts.value = cachedData
+      cachedData = JSON.parse(cachedPosts) as Post[]
+      posts.value = [...cachedData].sort(() => 0.5 - Math.random()) // Shuffle posts
       loading.value = false // Assume not loading if cached data is used
     }
 
@@ -26,8 +26,10 @@
       ) {
         console.log('Data has changed or not cached. Updating cache.')
         sessionStorage.setItem('posts', JSON.stringify(data.posts))
-        posts.value = data.posts
-        loading.value = false
+        if (!cachedData) {
+          posts.value = data.posts
+          loading.value = false
+        }
       }
       // If data is the same and we used cached data, no further action needed
     } catch (error) {
@@ -84,6 +86,7 @@
               format="webp"
               width="1024"
               height="576"
+              loading="lazy"
             />
           </NuxtLink>
         </div>
