@@ -42,7 +42,7 @@
           </li>
           <li>
             <NuxtLink to="/posts">
-              <Icon name="fe:bookmark" class="text-xl" />
+              <Icon name="fe:calendar" class="text-xl" />
               Posts
             </NuxtLink>
           </li>
