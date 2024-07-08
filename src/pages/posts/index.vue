@@ -51,7 +51,7 @@
           Posts
         </h2>
         <p class="mt-1 font-extralight tracking-[0.12em]"
-          >{{ data?.found }} posts found</p
+          >{{ data?.found.toLocaleString() }} posts found</p
         >
       </div>
       <div
