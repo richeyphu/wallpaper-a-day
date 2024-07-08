@@ -81,13 +81,13 @@
           <NuxtLink :to="`/posts/${post.ID}`" aria-label="View wallpaper">
             <NuxtImg
               :src="
-                post.attachments[Object.keys(post.attachments)[0]].thumbnails
+                post.attachments[Object.keys(post.attachments)[0]]?.thumbnails
                   .large
               "
               :alt="post.title"
               class="card-image w-full rounded-xl"
               :placeholder="
-                post.attachments[Object.keys(post.attachments)[0]].thumbnails
+                post.attachments[Object.keys(post.attachments)[0]]?.thumbnails
                   .thumbnail
               "
               placeholder-class="skeleton blur-[1px]"

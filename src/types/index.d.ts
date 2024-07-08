@@ -1,4 +1,4 @@
-export { GetPosts, Post }
+export { GetPosts, Post, Attachment }
 
 declare global {
   interface GetPostsResponse {
@@ -13,15 +13,15 @@ declare global {
     title: string
     content: string
     URL: string
-    attachments: {
-      [key: string]: {
-        URL: string
-        thumbnails: {
-          thumbnail: string
-          medium: string
-          large: string
-        }
-      }
+    attachments: { [key: string]: Attachment } | Record<string, never>
+  }
+
+  interface Attachment {
+    URL: string
+    thumbnails: {
+      thumbnail: string
+      medium: string
+      large: string
     }
   }
 }
