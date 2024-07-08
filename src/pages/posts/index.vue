@@ -1,6 +1,12 @@
 <script setup lang="ts">
-  const currentPage = ref(1)
+  const router = useRouter()
+  const route = useRoute()
+
+  const pageFromRoute = Number(route.query.page)
+
+  const currentPage = ref(pageFromRoute || 1)
   const postsPerPage = ref(12)
+
   const apiUrl = computed(
     () =>
       `${CMS_URL}/posts?number=${postsPerPage.value}&page=${currentPage.value}`
@@ -21,6 +27,9 @@
 
   watch(currentPage, () => {
     refresh()
+    router.replace({
+      query: { ...router.currentRoute.value.query, page: currentPage.value }
+    })
   })
 
   if (error.value) {
