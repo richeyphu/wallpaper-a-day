@@ -44,7 +44,7 @@
 <template>
   <div class="min-h-screen bg-base-200 py-20">
     <div class="container mx-auto px-4">
-      <div class="my-16 text-center">
+      <div class="my-10 text-center">
         <h2
           class="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text py-1 text-3xl font-bold text-transparent drop-shadow-sm md:text-4xl lg:text-5xl"
         >
@@ -53,6 +53,13 @@
         <p class="mt-1 font-extralight tracking-[0.12em]"
           >{{ data?.found.toLocaleString() }} posts found</p
         >
+      </div>
+      <div class="flex items-center justify-center space-x-2">
+        <PaginationButton
+          :current-page="currentPage"
+          :total-pages="totalPages"
+          @update:current-page="currentPage = $event"
+        />
       </div>
       <div
         v-if="pending"
@@ -91,28 +98,12 @@
           </NuxtLink>
         </div>
       </div>
-      <div class="pagination mt-6 flex items-center justify-center space-x-2">
-        <div class="join shadow-sm">
-          <button
-            class="btn join-item"
-            :disabled="currentPage <= 1"
-            :class="{ 'btn-disabled': currentPage <= 1 }"
-            @click="currentPage--"
-          >
-            <Icon name="fe:arrow-left" />
-          </button>
-          <button class="btn join-item">
-            Page {{ currentPage }} of {{ totalPages }}
-          </button>
-          <button
-            :disabled="currentPage >= totalPages"
-            :class="{ 'btn-disabled': currentPage >= totalPages }"
-            class="btn join-item"
-            @click="currentPage++"
-          >
-            <Icon name="fe:arrow-right" />
-          </button>
-        </div>
+      <div class="mt-6 flex items-center justify-center space-x-2">
+        <PaginationButton
+          :current-page="currentPage"
+          :total-pages="totalPages"
+          @update:current-page="currentPage = $event"
+        />
       </div>
       <div class="mt-4 text-center">
         <ScrollToTopButton />
