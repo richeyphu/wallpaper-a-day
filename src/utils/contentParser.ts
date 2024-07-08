@@ -20,3 +20,6 @@ export const modifyContent = (content: string) => {
   const serializer = new XMLSerializer()
   return serializer.serializeToString(doc.body)
 }
+
+export const firstAttachment = (post: Post): Attachment | undefined =>
+  post.attachments[Object.keys(post.attachments)[0]]

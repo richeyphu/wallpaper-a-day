@@ -75,21 +75,18 @@
       >
         <div
           v-for="post in data?.posts"
-          :key="post.title"
+          :key="post.ID"
           class="card shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-cyan-500/40 dark:hover:shadow-pink-500/40"
         >
           <NuxtLink :to="`/posts/${post.ID}`" aria-label="View wallpaper">
             <NuxtImg
               :src="
-                post.attachments[Object.keys(post.attachments)[0]]?.thumbnails
-                  .large
+                firstAttachment(post)?.thumbnails.large ||
+                'https://i.imgur.com/w72Jd1E.gif'
               "
               :alt="post.title"
-              class="card-image w-full rounded-xl"
-              :placeholder="
-                post.attachments[Object.keys(post.attachments)[0]]?.thumbnails
-                  .thumbnail
-              "
+              class="card-image aspect-video w-full rounded-xl"
+              :placeholder="firstAttachment(post)?.thumbnails.thumbnail"
               placeholder-class="skeleton blur-[1px]"
               format="webp"
               width="1024"
