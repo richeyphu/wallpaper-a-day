@@ -30,6 +30,9 @@
     router.replace({
       query: { ...router.currentRoute.value.query, page: currentPage.value }
     })
+    useHead({
+      title: `posts p.${currentPage.value}`
+    })
   })
 
   if (error.value) {
@@ -37,7 +40,7 @@
   }
 
   useHead({
-    title: 'posts'
+    title: `posts ${Number.isInteger(pageFromRoute) ? `p.${pageFromRoute}` : ''}`
   })
 </script>
 
