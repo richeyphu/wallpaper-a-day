@@ -89,6 +89,11 @@
         </div>
       </div>
       <div class="mt-10 text-center">
+        <NuxtLink class="btn btn-outline btn-secondary mt-1" to="/posts">
+          View more
+        </NuxtLink>
+      </div>
+      <div class="mt-4 text-center">
         <ScrollToTopButton />
       </div>
     </div>
