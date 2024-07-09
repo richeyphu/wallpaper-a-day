@@ -36,6 +36,6 @@ export default defineNuxtConfig({
     '/': { prerender: true },
     '/gallery': { prerender: true },
     '/posts': { ssr: true },
-    '/posts/*': { swr: true }
+    '/posts/**': { swr: true }
   }
 })
