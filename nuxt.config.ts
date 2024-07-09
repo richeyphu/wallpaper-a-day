@@ -31,5 +31,11 @@ export default defineNuxtConfig({
           : 'http://localhost:3000'),
       countApiUrl: ''
     }
+  },
+  routeRules: {
+    '/': { prerender: true },
+    '/gallery': { prerender: true },
+    '/posts': { swr: true },
+    '/posts/*': { isr: 3600 * 24 }
   }
 })
