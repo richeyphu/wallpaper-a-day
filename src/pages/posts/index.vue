@@ -40,7 +40,11 @@
   }
 
   useHead({
-    title: `posts ${Number.isInteger(pageFromRoute) ? `p.${pageFromRoute}` : ''}`
+    title: `posts ${Number.isInteger(pageFromRoute) ? `p.${pageFromRoute}` : ''}`,
+    link: [
+      { rel: 'prev', href: `${route.path}?page=${currentPage.value - 1}` },
+      { rel: 'next', href: `${route.path}?page=${currentPage.value + 1}` }
+    ].filter(link => link.href !== `${route.path}?page=0`)
   })
 </script>
 
