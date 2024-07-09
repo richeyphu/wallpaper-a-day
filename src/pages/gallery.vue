@@ -14,7 +14,7 @@
     }
 
     try {
-      const response = await fetch(`${CMS_URL}/posts?number=60`)
+      const response = await fetch(`/api/posts?number=60`)
       if (!response.ok) {
         throw new Error('Network response was not ok')
       }

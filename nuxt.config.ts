@@ -28,8 +28,7 @@ export default defineNuxtConfig({
         '' ||
         (process.env.NODE_ENV === 'production'
           ? 'https://wallpaper-a-day.vercel.app'
-          : 'http://localhost:3000'),
-      countApiUrl: ''
+          : 'http://localhost:3000')
     }
   },
   routeRules: {
@@ -37,5 +36,16 @@ export default defineNuxtConfig({
     '/gallery': { prerender: true },
     '/posts': { ssr: true },
     '/posts/**': { swr: true }
+  },
+  nitro: {
+    routeRules: {
+      '/api/posts/**': {
+        proxy:
+          'https://public-api.wordpress.com/rest/v1.1/sites/wallpaper-a-day.com/posts/**'
+      },
+      '/api/counts/**': {
+        proxy: process.env.COUNT_API_URL + '/**' || ''
+      }
+    }
   }
 })

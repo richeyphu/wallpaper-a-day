@@ -9,7 +9,7 @@
 
   const apiUrl = computed(
     () =>
-      `${CMS_URL}/posts?number=${postsPerPage.value}&page=${currentPage.value}`
+      `/api/posts?number=${postsPerPage.value}&page=${currentPage.value}`
   )
 
   const { data, pending, error, refresh } = await useFetch<GetPostsResponse>(
