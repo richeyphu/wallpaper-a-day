@@ -20,6 +20,8 @@
     return 'not found' // Fallback title
   })
 
+  const ogImage = (data.value && firstAttachment(data.value)?.thumbnails.large) || '/images/cover.png'
+
   onMounted(() => {
     if (data.value) {
       data.value.content = modifyContent(data.value.content)
@@ -28,6 +30,11 @@
 
   useHead({
     title: title.value
+  })
+
+  useSeoMeta({
+    ogImage: ogImage,
+    twitterImage: ogImage,
   })
 </script>
 
