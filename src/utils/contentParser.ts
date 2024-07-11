@@ -22,8 +22,10 @@ export const modifyContent = (content: string) => {
 }
 
 export const convertHtmlToText = (content: string) => {
+  // Remove new line characters
+  let modifiedContent = content.replace(/\n/g, '')
   // Replace closing tags with a comma
-  let modifiedContent = content.replace(/<\/[^>]+>/g, ',')
+  modifiedContent = modifiedContent.replace(/<\/[^>]+>/g, ', ')
   // Remove all remaining tags
   modifiedContent = modifiedContent.replace(/<[^>]*>/g, '')
   // Remove any leading or trailing commas and extra spaces
