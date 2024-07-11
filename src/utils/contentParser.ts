@@ -21,5 +21,8 @@ export const modifyContent = (content: string) => {
   return serializer.serializeToString(doc.body)
 }
 
+export const convertHtmlToText = (content: string) =>{
+  content.replace(/<[^>]*>/g, '')
+}
 export const firstAttachment = (post: Post): Attachment | undefined =>
   post.attachments[Object.keys(post.attachments)[0]]

@@ -20,21 +20,33 @@
     return 'not found' // Fallback title
   })
 
-  const ogImage = (data.value && firstAttachment(data.value)?.thumbnails.large) || '/images/cover.png'
-
   onMounted(() => {
     if (data.value) {
       data.value.content = modifyContent(data.value.content)
     }
   })
 
+  const ogImage =
+    (data.value && firstAttachment(data.value)?.thumbnails.large) ||
+    '/images/cover.png'
+  const ogDescription =
+    (data.value && convertHtmlToText(data.value.content)) || SITE_DESCRIPTION
+
   useHead({
-    title: title.value
+    title: title.value,
+    meta: [
+      {
+        name: 'description',
+        content: ogDescription
+      }
+    ]
   })
 
   useSeoMeta({
+    ogDescription: ogDescription,
     ogImage: ogImage,
-    twitterImage: ogImage,
+    twitterDescription: ogDescription,
+    twitterImage: ogImage
   })
 </script>
 
