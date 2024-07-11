@@ -4,8 +4,8 @@
   const route = useRoute()
   const config = useRuntimeConfig()
 
-  const title = WEBSITE_TITLE
-  const description = 'Favorite daily anime wallpaper site reimagined.'
+  const title = SITE_TITLE
+  const description = SITE_DESCRIPTION
   const baseUrl = config.public.baseUrl
   const ogImage = `${baseUrl}/images/cover.png`
 
